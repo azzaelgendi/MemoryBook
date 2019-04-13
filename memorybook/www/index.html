@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<!--
+/**
+ * File Name: index.html
+ *
+ * Revision History:
+ *       Azza Elgendy, April4th,2019 : Created
+ */
+-->
+
+<html lang="en">
+    <head>
+        <!--Method to let web designers take control over the viewport-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <!--my title-->
+        <title>AElgendyFinalProject</title>
+        <!--jQuery-->
+        <script src="js/lib/jquery-2.1.4.js"></script>
+        <!--jQuery mobile-->
+        <script src="js/lib/jquery.mobile-1.4.5.js"></script>
+
+        <!--jQuery validation-->
+        <script src="js/lib/jquery.validate.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="Calendar.js"></script>
+        <script src="js/AECamera.js"></script>
+        <!--jQuery mobile css-->
+        <link rel="stylesheet" type="text/css" href="css/lib/jquery.mobile-1.4.5.css">
+        <link rel="stylesheet" href="css/lib/jquery.mobile.theme-1.4.5.css">
+        <!--my scripts-->
+        <script src="js/AEdatabase.js"></script>
+        <script src="js/AEDAL.js"></script>
+        <script src="js/AEfacade.js"></script>
+        <script src="js/AEUtil.js"></script>
+        <script src="js/global.js"></script>
+
+        <!--my stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/AEmystyle.css">
+        <script src="js/AECalender.js"></script>
+
+        <!--Cordova-->
+
+    </head>
+    <body>
+        <!--page 1 Home page-->
+        <div data-role="page" id="AEHomePage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Memory Book App</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-active ui-state-persist">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                        <!--<li><a href="#AEEditMemoryPage" data-icon="grid" class="ui-btn-a">Edit</a></li>-->
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-a">Memories</a></li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-a">About</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 1 content-->
+            <section data-role="content">
+                <h1>Memories Book App </h1>
+                <p> Welcome to Azza Elgendy Memories Book App.A prototype designed for mobile programming class <br>
+                    Make your days unforgettable by writing a page in your Memory Book </p>
+                <!-- Slideshow container -->
+                <div class="slideshow-container">
+                    <!-- Full-width images with number and caption text -->
+                    <div class="mySlides fade">
+                        <img src="img/winter2.jpg" alt="winter" style="width:75%">
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="img/sky1.jpg" alt="sky" style="width:75%">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="img/mus1.jpg" alt="museum" style="width:75%">
+                    </div>
+                </div>
+                <br>
+                <p>Please feel free to contact me if you have any suggestion </p>
+                <a href="tel:2268683979" data-role="button" data-icon="plus">226.868.3979</a>
+                <a href="mailto:aelgendy7114@conestogac.on.ca" data-role="button"
+                   data-icon="plus">aelgendy7114@conestogac.on.ca</a>
+                <p>Website</p>
+                <div class="ui-group-theme-a" data-role="controlgroup" data-type="horizontal" data-position="center">
+
+                    <a href="https://www.linkedin.com/in/azza-elgendy/" data-role="button" data-icon="false">
+                        <img src="img/linkedin.png" width="50px;" height="50px;" alt="altText">
+                    </a>
+                    <a href="https://github.com/" data-role="button" data-icon="false">
+                        <img src="img/github.png" width="50px;" height="50px;" alt="altText">
+                    </a>
+                </div>
+            </section>
+            <!--page1footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+        <!--page 2 Add page-->
+        <div data-role="page" id="AEAddMemoryPage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Add A Memory</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a>
+                        </li>
+                        <!--<li><a href="#AEEditMemoryPage" data-icon="grid" class="ui-btn-a">Edit</a></li>-->
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-a">Memories</a></li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-a">About</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 2 content-->
+            <section data-role="content">
+                <h1> Add a page in your Memories Book App </h1>
+                <form id="AEAddFrm" name="AEAddFrm" data-ajax="true">
+                    <label for="AEAddTitle"></label>Add a title for your memory
+                    <input type="text" id="AEAddTitle" name="AEAddTitle">
+                    <label for="AEAddLoc"></label>Add location of your memory
+                    <input type="text" id="AEAddLoc" name="AEAddLoc">
+                    <label for="AEAddNotes"></label>Add Notes for your memory
+                    <textarea cols="10" rows="10" id="AEAddNotes" name="AEAddNotes"
+                              placeholder="Add your interesting details"></textarea>
+                    <label for="AEAddmemoryDate">Date</label>
+                    <input type="date" id="AEAddmemoryDate" name="AEAddmemoryDate">
+                    <label for="AEAddMemoryType">Type:</label>
+                    <select id="AEAddMemoryType" name="AEAddMemoryType">
+                        <!--This will be populated from type table-->
+                    </select>
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button type="button" id="btnCapturePhotoEdit" name="btnCapturePhotoEdit" data-icon="camera"
+                                data-iconpos="left"
+                                data-theme="a" data-inline="false">Capture Photo
+                        </button>
+                        <button type="button" id="btnLoadFromLibrary" name="btnLoadFromLibrary" data-icon="plus"
+                                data-iconpos="left"
+                                data-theme="a" data-inline="false">Load Photo
+                        </button>
+                        <button id="btnShowFile" type="button">Show file</button>
+                        <button id="AEAddNext" name="AEAddNext" data-icon="arrow-r" data-position="center"
+                                class=" ui-btn-active">Save
+                        </button>
+                    </div>
+                    <div class="imageContatiner">
+                    <img id="imgSnap" name="imgSnap" src="" width="100%" height="100%" alt="Photo loads here">
+                        <label id="lblMessage"></label></div>
+                    <canvas id="canvas" width="5000px" height="5000px" style="background-color: snow;"></canvas>
+                </form>
+            </section>
+            <!--page2footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+
+        <!--page 3 view-->
+        <div data-role="page" id="AEEditMemoryPage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Edit Your memory</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                        <!--<li><a href="#AEEditMemoryPage" data-icon="grid" class="ui-btn-active ui-state-persist">Edit</a>-->
+                        <!--</li>-->
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-a">Memories</a></li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-a">About</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 3 content-->
+            <section data-role="content">
+                <h1> Edit a page in your Memories Book App </h1>
+                <form id="AEEditFrm" name="AEEditFrm" data-ajax="true">
+                    <label for="AEEditTitle"></label>Edit Name for your memory
+                    <input type="text" id="AEEditTitle" name="AEEditTitle">
+                    <label for="AEEditLoc"></label>Edit location of your memory
+                    <input type="text" id="AEEditLoc" name="AEEditLoc">
+                    <label for="AEEditNotes"></label>Edit Notes for your memory
+                    <textarea cols="10" rows="10" id="AEEditNotes"
+                              name="AEEditNotes">Edit your memory details</textarea>
+                    <label for="AEEditmemoryDate">Date</label>
+                    <input type="date" id="AEEditmemoryDate" name="AEEditmemoryDate">
+                    <label for="AEEditMemoryType">Type:</label>
+                    <select id="AEEditMemoryType" name="AEEditMemoryType">
+                        <!--This will be populated from type table-->
+                    </select>
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button type="button" id="btnCapturePhoto" name="btnCapturePhoto" data-icon="camera"
+                                data-iconpos="left"
+                                data-theme="a" data-inline="false">Capture Photo
+                        </button>
+                        <button type="button" id="btnLoadFromLibraryEdit" name="btnLoadFromLibraryEdit" data-icon="plus"
+                                data-iconpos="left"
+                                data-theme="a" data-inline="false">Load Photo
+                        </button>
+                    </div>
+                    <!--group buttons-->
+                    <div data-role="controlgroup" data-type="horizontal">
+                        <button id="AECancel" name="AECancel" style="color: black; background-color: yellow;">Cancel
+                        </button>
+                        <button id="AEDelete" name="AEDelete" style="color: white; background-color: black;">Delete
+                        </button>
+                        <button id="AEUpdate" name="AEUpdate" class=" ui-btn-active">Update</button>
+                        <button id="AECalender" name="AECalender" data-icon="calendar">Calender</button>
+                    </div>
+                </form>
+                <div class="imageContatiner">
+                <img id="imgSnapEdit" name="imgSnapEdit" src="" width="100%" height="100%" alt="Photo loads here">
+                    <label id="lblMessageEdit"></label></div>
+                <canvas  id="canvasEdit" width="5000px" height="5000px" style="background-color: snow;"></canvas>
+            </section>
+            <!--page3footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+
+        <!--page 4 book page-->
+        <div data-role="page" id="AEViewMemoryBookPage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>Your Memories Book</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                        <!--<li><a href="#AEEditMemoryPage" data-icon="grid" class="ui-btn-a">Edit</a></li>-->
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-active ui-state-persist">Memories</a>
+                        </li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-a">About</a></li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 4 content-->
+            <section data-role="content">
+                <!--list view-->
+                <ul data-role="listview" data-inset="true" data-icon="false" name="AEMemoryList" id="AEMemoryList">
+                </ul>
+            </section>
+            <!--page4footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+
+        <!--page 5 About page-->
+        <div data-role="page" id="AEAAboutPage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>About Memory Book</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                        <!--<li><a href="#AEEditMemoryPage" data-icon="grid" class="ui-btn-a">Edit</a></li>-->
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-a">Memories</a></li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-active ui-state-persist">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 5 content-->
+            <section data-role="content">
+                <div id="AESettingDiv">
+                    <h1>Memories Mobile App</h1>
+                    <ul>
+                        <li>Created By: Azza Elgendy</li>
+                        <li>Purpose : Web Mobile App Development</li>
+                        <li>Date Created: April 9,2019</li>
+                    </ul>
+                </div>
+
+                <button id="AESetting" name="AESetting"
+                        style="margin-bottom:5px;color:white; background-color: #996f98;" data-icon="gear">Setting
+                </button>
+            </section>
+            <!--page5footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+
+        <!--page  6 setting page-->
+        <div data-role="page" id="AEASettingPage">
+            <!--header-->
+            <header data-role="header" data-theme="b" data-position="fixed">
+                <h1>About Memory Book</h1>
+                <!--navigation bar-->
+                <div data-role="navbar" data-iconpos="top">
+                    <ul>
+                        <li><a href="#AEHomePage" data-icon="home" class="ui-btn-a">Home</a></li>
+                        <li><a href="#AEAddMemoryPage" data-icon="plus" class="ui-btn-a">Add</a></li>
+                        <li><a href="#AEASettingPage" data-icon="gear" class="ui-btn-active ui-state-persist">Setting</a>
+                        </li>
+                        <li><a href="#AEViewMemoryBookPage" data-icon="heart" class="ui-btn-a">Memories</a></li>
+                        <li><a href="#AEAAboutPage" data-icon="eye" class="ui-btn-a">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </header>
+            <!--page 5 content-->
+            <section data-role="content">
+                <form action="" id="AESettingForm" name="AESettingForm">
+                    <label for="AEDefaultlocation">Default location</label>
+                    <input type="text" id="AEDefaultlocation" name="AEDefaultlocation">
+                    <div data-role="controlgroup" data-type="vertical">
+                        <button id="AESaveDefault" name="AESaveDefault"
+                                class=" ui-btn-active" data-icon="cloud">Save
+                            Default
+                        </button>
+                        <button id="AEClearDatabase" name="AEClearDatabase" data-icon="alert"
+                                style="margin-bottom:5px;color:white; background-color: #996f98;">Clear Database
+                        </button>
+                    </div>
+                </form>
+            </section>
+            <!--page5footer-->
+            <footer data-role="footer" data-theme="b" data-position="fixed">
+                <h3> &copy; 2019 Azza Elgendy</h3>
+            </footer>
+        </div>
+    </body>
+</html>
